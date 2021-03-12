@@ -1,6 +1,6 @@
 
 let current_tag = "marmar"; 
-let key = "AR/VR"
+
 
 AFRAME.registerComponent('registerevents', {
     init: function () {
@@ -32,6 +32,9 @@ return text.toUpperCase().replace(/[^A-Z]/g, '').replace(/[A-Z]/g, function(a) {
    
 
 function decrypt() {
+
+    let text = "hello its me"; 
+    let key = "there"; 
 
     let input = document.getElementById("decryptxt").value;
 
