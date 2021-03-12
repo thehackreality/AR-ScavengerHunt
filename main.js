@@ -1,5 +1,6 @@
 
 let current_tag = "marmar"; 
+let key = "AR/VR"
 
 AFRAME.registerComponent('registerevents', {
     init: function () {
@@ -15,10 +16,32 @@ AFRAME.registerComponent('registerevents', {
     },
 });
 
+function ordA(a) {
+    return a.charCodeAt(0) - 65;
+  }
+   
+  // vigenere
+function vigenere(text, key, decode) {
+var i = 0, b;
+key = key.toUpperCase().replace(/[^A-Z]/g, '');
+return text.toUpperCase().replace(/[^A-Z]/g, '').replace(/[A-Z]/g, function(a) {
+    b = key[i++ % key.length];
+    return String.fromCharCode(((ordA(a) + (decode ? 26 - ordA(b) : ordA(b))) % 26 + 65));
+});
+}
+   
 
 function decrypt() {
 
     let input = document.getElementById("decryptxt").value;
+
+    let encode = vigenere(text,key);
+
+    console.log(encode); 
+
+    let decode = vigenere(encode,key, true);
+
+    console.log(decode)
 
     document.getElementById("im1").setAttribute("value", current_tag+input); 
  
