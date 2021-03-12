@@ -1,5 +1,5 @@
 
-let current_tag = ""; 
+let current_tag = "marmar"; 
 
 AFRAME.registerComponent('registerevents', {
     init: function () {
