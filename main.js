@@ -31,8 +31,8 @@ function vigenere(text, key, decode) {
 
 function decrypt() {
 
-    let text = "hello its me"; 
-    let ekey = "there"; 
+    let text = "Mona Lisa"; 
+    let ekey = "thestarrynight"; 
 
     let input = document.getElementById("secret").value;
 
@@ -40,10 +40,10 @@ function decrypt() {
 
     console.log(encode); 
 
-    let decode = vigenere(encode,ekey, true);
+    let decode = vigenere(encode,input, true);
 
     console.log(decode)
 
-    document.getElementById("im1").setAttribute("value", current_tag+input); 
+    document.getElementById("im1").setAttribute("value", decode); 
  
 }
