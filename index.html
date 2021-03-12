@@ -20,13 +20,7 @@
     color: white;
   }
 
-    .input-s {
-        position: relative;
-        float: right;
-        
-    }
-
-    .my-button {
+  .my-button {
       opacity: 0.7;
       font-size: 18px;
       padding: 0.55em;
@@ -44,16 +38,14 @@
 
 <body style='margin : 0px; overflow: hidden;'>
    <!-- minimal loader shown until image descriptors are loaded -->
-  
+    
+    
+    <div class="buttons">
+        <button class="my-button" onclick="decrypt()">Decrypt</button>
+        <input  name="input" type="text" id="decryptxt"/>
+    </div>
+
     <button class="my-button" onclick="decrypt()">Decrypt</button>
-    <!-- <input class="input-s" name="input" type="text" id="decryptxt"/> -->
-  
-
-  <div class="arjs-loader">
-    <div>Loading, please wait...</div>
-  </div>
-
-  
 
     <a-scene
         vr-mode-ui='enabled: false;'
