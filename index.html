@@ -20,22 +20,14 @@
     color: white;
   }
 
-    #input-wrapper * {
-        position: absolute;
-    }
-
-  
-    #input-wrapper input {
-        height: 25px;
-        text-indent: 35px;
+    .input-s {
+        position: relative;
     }
 
     .my-button {
       opacity: 0.7;
       font-size: 18px;
       padding: 0.55em;
-      top:0;
-      left:0;
       border-radius: 4px;
       border: none;
       background: rgba(255, 255, 255, 0.993);
@@ -56,9 +48,7 @@
 
   <div>
     <button class="my-button" onclick="decrypt()">Decrypt</button>
-    <div id="input-wrapper">
-        <input class="buttons" name="input" type="text" id="decryptxt"/>
-    </div>
+    <input class="input-s" name="input" type="text" id="decryptxt"/>
   </div>
 
     <a-scene
