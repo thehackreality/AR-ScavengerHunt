@@ -34,7 +34,7 @@ function decrypt() {
     let text = "hello its me"; 
     let ekey = "there"; 
 
-    //let input = document.getElementById("decryptxt").value;
+    let input = document.getElementById("secret").value;
 
     let encode = vigenere(text,ekey);
 

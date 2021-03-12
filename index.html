@@ -1,3 +1,6 @@
+<script src="https://gist.github.com/MEECAH/7b48c42054389391601a52066f34528b.js"></script>
+fixed css on shaik's scavenger hunt
+index.html
 <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
 
 <style>
@@ -28,23 +31,9 @@
     }
 
     .right {
-        margin: auto;
-        right: 0em;
-        opacity: 0.7;
-        font-size: 18px;
-        padding: 0.55em;
-        border-radius: 4px;
-        border: none;
-        background: rgba(255, 255, 255, 0.993);
-        color: rgb(0, 0, 0);
-        -webkit-appearance: none;
-    }
-
-    
-    .my-button {
       opacity: 0.7;
-      font-size: 18px;
-      padding: 0.1em;
+      font-size: 25px;
+      padding: 0.3em;
       border-radius: 4px;
       text-align: center;
       align-content: center;
@@ -53,6 +42,19 @@
       color: rgb(0, 0, 0);
       -webkit-appearance: none;
     }
+
+    .buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 12em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
 </style>
 
 <!-- rawgithack development URL -->
@@ -66,8 +68,12 @@
         
     </div>
 
-    <div>
-        <button class="right" onclick="decrypt()">Decrypt</button>
+    <div class="buttons">
+      <form class="right">
+        <label for="secret">Secret:</label><br>
+        <input type="text" id="secret" name="secret" placeholder="input secret here"><br>
+        <input type="submit" onclick="decrypt()" value="Decrypt">
+      </form> 
     </div>
 
     
