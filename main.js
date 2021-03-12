@@ -1,6 +1,4 @@
-
 let current_tag = "marmar"; 
-
 
 AFRAME.registerComponent('registerevents', {
     init: function () {
@@ -22,27 +20,27 @@ function ordA(a) {
    
   // vigenere
 function vigenere(text, key, decode) {
-var i = 0, b;
-key = key.toUpperCase().replace(/[^A-Z]/g, '');
-return text.toUpperCase().replace(/[^A-Z]/g, '').replace(/[A-Z]/g, function(a) {
-    b = key[i++ % key.length];
-    return String.fromCharCode(((ordA(a) + (decode ? 26 - ordA(b) : ordA(b))) % 26 + 65));
-});
+    var i = 0, b;
+    key = key.toUpperCase().replace(/[^A-Z]/g, '');
+    return text.toUpperCase().replace(/[^A-Z]/g, '').replace(/[A-Z]/g, function(a) {
+        b = key[i++ % key.length];
+        return String.fromCharCode(((ordA(a) + (decode ? 26 - ordA(b) : ordA(b))) % 26 + 65));
+    });
 }
    
 
 function decrypt() {
 
     let text = "hello its me"; 
-    let key = "there"; 
+    let ekey = "there"; 
 
-    let input = document.getElementById("decryptxt").value;
+    //let input = document.getElementById("decryptxt").value;
 
-    let encode = vigenere(text,key);
+    let encode = vigenere(text,ekey);
 
     console.log(encode); 
 
-    let decode = vigenere(encode,key, true);
+    let decode = vigenere(encode,ekey, true);
 
     console.log(decode)
 
