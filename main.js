@@ -36,11 +36,13 @@ function decrypt() {
 
     let input = document.getElementById("secret").value;
 
+    let clean_input = input.replace(/\s/g, '').toLowerCase();
+
     let encode = vigenere(text,ekey);
 
     console.log(encode); 
 
-    let decode = vigenere(encode,input, true);
+    let decode = vigenere(encode,clean_input, true);
 
     console.log(decode)
 
