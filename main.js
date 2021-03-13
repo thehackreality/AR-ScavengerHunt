@@ -39,6 +39,8 @@ function decrypt() {
     let input = document.getElementById("secret").value;
 
     console.log(input); 
+    console.log(current_id); 
+    console.log(current_hash)
 
     let clean_input = input.replace(/\s/g, '').toLowerCase();
 
