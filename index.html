@@ -82,7 +82,7 @@ beginning. It will get tougher soon if it isnt touch already! :)  -->
     <div class="form-div">
       <form class="form">
         <input type="text" id="secret" name="secret" placeholder="input secret here"><br>
-        <button class='button' type='button' onclick="decrypt()" value="Decrypt">Decrypt</button>
+        <input class='button' type='button' onclick="decrypt()" value="Decrypt"></input>
       </form> 
     </div>
 
@@ -94,11 +94,19 @@ beginning. It will get tougher soon if it isnt touch already! :)  -->
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <a-nft
-            registerevents type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/one/one'
+            markerhandler
+            type='nft'
+            url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/one/one'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <a-text id="im1" position="0 0 -200" value="MOISZEFWCATONAMLREXNKTMZMYDBMOEKHFKJREWQLTGKELKITFJBZKKYBZX" color="red" rotation="-90 0 0"  scale="100 100 100"></a-text>
+            <a-text 
+              id="im1" 
+              position="0 0 -200" 
+              value="MOISZEFWCATONAMLREXNKTMZMYDBMOEKHFKJREWQLTGKELKITFJBZKKYBZX" 
+              color="red" rotation="-90 0 0"  scale="100 100 100">
+            </a-text>
         </a-nft>
-
+        
+        <!--
         <a-nft
             registerevents type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/two/two'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
@@ -122,6 +130,8 @@ beginning. It will get tougher soon if it isnt touch already! :)  -->
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
             <a-text id="im5" position="0 0 -200" value="UWQIFLMXKSGLMZQJURUWTIPTMVFSZI" color="red" rotation="-90 0 0"  scale="100 100 100"></a-text>
         </a-nft>
+
+        -->
 		<a-entity camera></a-entity>
     </a-scene>
 

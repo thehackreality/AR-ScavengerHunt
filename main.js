@@ -1,42 +1,20 @@
-let current_hash = ""; 
-let current_id = ""; 
-let current_input = ""; 
 
-AFRAME.registerComponent('registerevents', {
+
+AFrame.registerComponent('markerhandler', {
     init: function () {
-        const marker = this.el;
+        this.el.sceneEl.addEventListener('markerFound', () => {
+            console.log("helloooo"); 
+            console.log(this.el.atext.value); 
 
-        marker.addEventListener("markerFound", ()=> {
-            current_hash = marker.value; 
-            //current_id = marker.id;
-            
-            marker.value = cypher(marker.value, clean_input, true);
+        })
+    }
+}
 
-            console.log(current_id); 
-            console.log(current_hash);             
-            console.log(clean_input); 
-            //console.log(current_id); 
-            console.log(current_hash)
-
-           
-
-            let decode = cypher(current_hash,clean_input, true);
-
-            console.log(decode)
-
-            //document.getElementById(current_id).setAttribute("value", decode); 
-        });
-
-
-        marker.addEventListener("markerLost",() =>{
-            console.log('Marker Lost: ');
-        });
-    },
-});
+)
 
 function ordA(a) {
     return a.charCodeAt(0) - 65;
-  }
+}
    
 
 function cypher(text, key, decode) {
@@ -51,8 +29,6 @@ function cypher(text, key, decode) {
 
 function decrypt() {
 
-    let input = document.getElementById("secret").value;
-    let clean_input = input.replace(/\s/g, '').toLowerCase();
-    current_input = clean_input; 
+    console.log("I am here");  
  
 }
