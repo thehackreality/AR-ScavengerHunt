@@ -1,6 +1,6 @@
 
 
-AFrame.registerComponent('markerhandler', {
+AFRAME.registerComponent('markerhandler', {
     init: function () {
         var Marker = this.el; 
 
