@@ -1,5 +1,6 @@
 let current_hash = ""; 
-let current_id = ""
+let current_id = ""; 
+let current_input = ""; 
 
 AFRAME.registerComponent('registerevents', {
     init: function () {
