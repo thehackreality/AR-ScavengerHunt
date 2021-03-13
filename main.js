@@ -8,9 +8,23 @@ AFRAME.registerComponent('registerevents', {
 
         marker.addEventListener("markerFound", ()=> {
             current_hash = marker.value; 
-            current_id = marker.id;
+            //current_id = marker.id;
+            
+            marker.value = cypher(marker.value, clean_input, true);
+
             console.log(current_id); 
-            console.log(current_hash); 
+            console.log(current_hash);             
+            console.log(clean_input); 
+            //console.log(current_id); 
+            console.log(current_hash)
+
+           
+
+            let decode = cypher(current_hash,clean_input, true);
+
+            console.log(decode)
+
+            //document.getElementById(current_id).setAttribute("value", decode); 
         });
 
 
@@ -38,17 +52,7 @@ function cypher(text, key, decode) {
 function decrypt() {
 
     let input = document.getElementById("secret").value;
-
-    console.log(input); 
-    console.log(current_id); 
-    console.log(current_hash)
-
     let clean_input = input.replace(/\s/g, '').toLowerCase();
-
-    let decode = cypher(current_hash,clean_input, true);
-
-    console.log(decode)
-
-    document.getElementById(current_id).setAttribute("value", decode); 
+    current_input = clean_input; 
  
 }
