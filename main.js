@@ -1,4 +1,13 @@
 
+let current_cypher = ""; 
+
+
+function update(cypher){
+    current_cypher = cypher;
+    console.log(current_cypher);  
+}
+
+
 function ordA(a) {
     return a.charCodeAt(0) - 65;
 }
@@ -16,6 +25,7 @@ function cypher(text, key, decode) {
 
 function decrypt() {
 
-    console.log("I am here");  
+    console.log("I am here");
+    console.log(current_cypher);   
  
 }
