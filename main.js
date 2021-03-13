@@ -11,8 +11,6 @@ AFRAME.registerComponent('registerevents', {
         });
 
         marker.addEventListener("markerLost",() =>{
-            current_hash = ""; 
-            current_id = ""; 
             console.log('Marker Lost: ');
         });
     },
@@ -36,6 +34,8 @@ function cypher(text, key, decode) {
 function decrypt() {
 
     let input = document.getElementById("secret").value;
+
+    console.log(input); 
 
     let clean_input = input.replace(/\s/g, '').toLowerCase();
 
