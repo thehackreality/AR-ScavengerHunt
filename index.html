@@ -164,7 +164,7 @@ AFRAME.registerComponent('markerhandlerfive', {
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
+        <!--
         <a-nft
             markerhandlerone
             type='nft'
@@ -178,7 +178,25 @@ AFRAME.registerComponent('markerhandlerfive', {
             </a-text>
 
         </a-nft>
-        
+      -->
+
+      <a-nft
+      markerhandlerone
+      type='nft'
+      url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/one/one'
+      smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+
+        <a-text 
+          id="im1" 
+          value="MOISZEFWCATONAMLREXNKTMZMYDBMOEKHFKJREWQLTGKELKITFJBZKKYBZX" 
+          color="red" 
+          rotation="-90 0 0" 
+          scale="40 40 40" 
+          text="anchor: center; zOffset: -2; wrapCount: 15; align: center; height: 50; lineHeight: 50; xOffset: 3" 
+          position="">
+        </a-text>
+
+      </a-nft>
         
         <a-nft
           markerhandlertwo type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/two/two'
