@@ -31,7 +31,8 @@ function decrypt() {
     let inputVar = document.getElementById("secret").value; 
     console.log(inputVar); 
     let cleanInput = inputVar.replace(/\s+/g, '');
-    let decode = cypher(current_cypher, cleanInput, true); 
+    let decode = cypher(current_cypher, cleanInput, true);
+    document.getElementById(current_id).setAttribute("value", decode);  
     console.log(decode);   
  
 }
