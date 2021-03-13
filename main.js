@@ -6,9 +6,12 @@ AFRAME.registerComponent('registerevents', {
         const marker = this.el;
 
         marker.addEventListener("markerFound", ()=> {
-            current_hash = el.value; 
-            current_id = el.id;
+            current_hash = marker.value; 
+            current_id = marker.id;
+            console.log(current_id); 
+            console.log(current_hash); 
         });
+
 
         marker.addEventListener("markerLost",() =>{
             console.log('Marker Lost: ');
