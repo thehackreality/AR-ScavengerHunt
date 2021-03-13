@@ -1,9 +1,11 @@
 
 let current_cypher = ""; 
+let current_id = ""; 
 
 
-function update(cypher){
+function update(cypher, id){
     current_cypher = cypher;
+    current_id = id; 
     console.log(current_cypher);  
 }
 
@@ -26,6 +28,9 @@ function cypher(text, key, decode) {
 function decrypt() {
 
     console.log("I am here");
-    console.log(current_cypher);   
+    let inputVar = document.getElementById("secret").value; 
+    let cleanInput = inputVar.replace(/\s+/g, '');
+    let decode = cypher(current_cypher, cleanInput, true); 
+    console.log(decode);   
  
 }
