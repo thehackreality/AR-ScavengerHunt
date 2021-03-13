@@ -2,15 +2,16 @@
 
 AFrame.registerComponent('markerhandler', {
     init: function () {
-        this.el.sceneEl.addEventListener('markerFound', () => {
-            console.log("helloooo"); 
-            console.log(this.el.atext.value); 
+        var Marker = this.el; 
 
-        })
+        Marker.addEventListener('markerFound', function() {
+            this.atext = document.querySelector("#im1");
+            // TODO: Add your own code here to react to the marker being found.
+            console.log(this.atext.value); 
+        });
+        
     }
-}
-
-)
+})
 
 function ordA(a) {
     return a.charCodeAt(0) - 65;
