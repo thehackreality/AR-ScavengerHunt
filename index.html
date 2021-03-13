@@ -4,6 +4,7 @@
 <!-- I see that you are looking at the code to try and figure out the cypher. Well this is just the
 beginning. It will get tougher soon if it isnt touch already! :)  -->
 
+
 <style>
   .arjs-loader {
     height: 100%;
@@ -56,7 +57,7 @@ beginning. It will get tougher soon if it isnt touch already! :)  -->
     }
 
     .button {
-      background-color: #4475cfb6; /* Green */
+      background-color: #4475cfb6; 
       border: none;
       color: white;
       padding: 10px 25px;
@@ -79,7 +80,6 @@ beginning. It will get tougher soon if it isnt touch already! :)  -->
           let cypher = at.getAttribute("value");  
           console.log(cypher); 
           update(cypher, "im1"); 
-          // TODO: Add your own code here to react to the marker being found.
       }); 
   }
 })
@@ -93,7 +93,6 @@ AFRAME.registerComponent('markerhandlertwo', {
           let cypher = at.getAttribute("value");  
           console.log(cypher); 
           update(cypher, "im2"); 
-          // TODO: Add your own code here to react to the marker being found.
       }); 
   }
 })
@@ -107,7 +106,6 @@ AFRAME.registerComponent('markerhandlerthree', {
           let cypher = at.getAttribute("value");  
           console.log(cypher); 
           update(cypher, "im3"); 
-          // TODO: Add your own code here to react to the marker being found.
       }); 
   }
 })
@@ -121,7 +119,6 @@ AFRAME.registerComponent('markerhandlerfour', {
           let cypher = at.getAttribute("value");  
           console.log(cypher); 
           update(cypher, "im4"); 
-          // TODO: Add your own code here to react to the marker being found.
       }); 
   }
 })
@@ -135,7 +132,6 @@ AFRAME.registerComponent('markerhandlerfive', {
           let cypher = at.getAttribute("value");  
           console.log(cypher); 
           update(cypher, "im5"); 
-          // TODO: Add your own code here to react to the marker being found.
       }); 
   }
 })
@@ -144,7 +140,6 @@ AFRAME.registerComponent('markerhandlerfive', {
 
 
 <body style='margin : 0px; overflow: hidden;'>
-   <!-- minimal loader shown until image descriptors are loaded -->
     
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
