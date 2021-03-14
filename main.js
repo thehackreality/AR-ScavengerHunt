@@ -29,5 +29,13 @@ function decrypt() {
     let inputVar = document.getElementById("secret").value; 
     let cleanInput = inputVar.replace(/\s+/g, '');
     let decode = cypher(current_cypher, cleanInput, true);
-    document.getElementById(current_id).setAttribute("value", decode);  
+
+    let encodeTest = cypher(decode,cleanInput); 
+
+    if(encodeTest === current_cypher){
+        document.getElementById(current_id).setAttribute("value", decode);
+        document.getElementById(current_id).setAttribute("color", "green");
+    }
+
+     
 }
