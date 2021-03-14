@@ -135,6 +135,19 @@ AFRAME.registerComponent('markerhandlerfive', {
       }); 
   }
 })
+
+AFRAME.registerComponent('markerhandlertest', {
+  init: function () {
+      var Marker = this.el; 
+
+      Marker.addEventListener('markerFound', function() {
+          let at = document.getElementById("test"); 
+          let cypher = at.getAttribute("value");  
+          console.log(cypher); 
+          update(cypher, "test"); 
+      }); 
+  }
+})
 </script>
 
 
@@ -159,6 +172,24 @@ AFRAME.registerComponent('markerhandlerfive', {
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+
+      <a-nft
+      markerhandlertest
+      type='nft' 
+      url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex'
+      smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+
+      <a-text 
+        id="test" 
+        value="AQRIROITGWRBNWSUFLE" 
+        color="red" 
+        rotation="-90 0 0" 
+        scale="40 40 40" 
+        text="anchor: center; zOffset: -2; wrapCount: 15; align: center; height: 50; lineHeight: 50; xOffset: 3" 
+        position="">
+      </a-text>
+
+      </a-nft>
        
       <a-nft
       markerhandlerone
