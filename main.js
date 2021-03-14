@@ -36,9 +36,12 @@ function decrypt() {
 
     let decode2 = cypher(encodeTest, cleanInput, true); //decode 2
 
-    if(encodeTest === current_cypher && decode2 === decode ){
-      
-        document.getElementById(current_id).setAttribute("value", decode);
+    if(encodeTest === current_cypher && decode2 === decode){
+        console.log(encodeTest, current_cypher, decode2, decode); 
+
+        let lastDecode = cypher(encodeTest, cleanInput, true); 
+        console.log(lastDecode); 
+        document.getElementById(current_id).setAttribute("value", lastDecode);
         document.getElementById(current_id).setAttribute("color", "green");
     
     }
