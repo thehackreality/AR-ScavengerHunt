@@ -27,13 +27,13 @@ function cypher(text, key, decode) {
    
 //hmmmmmm
 function decrypt() {
-    //let inputVar = document.getElementById("secret").value; // key
+    let inputVar = document.getElementById("secret").value; // key
 
-    //let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
+    let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
 
-    //let decode = cypher(current_cypher, cleanInput, true); //decode
+    let decode = cypher(current_cypher, cleanInput, true); //decode
 
     //let encodeTest = cypher(decode,cleanInput); 
     console.log("I am here"); 
-    document.getElementById("test").setAttribute("value", "hello"); 
+    document.getElementById("test").setAttribute("value", decode); 
 }

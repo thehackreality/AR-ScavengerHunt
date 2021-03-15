@@ -142,15 +142,17 @@ AFRAME.registerComponent('markerhandlertest', {
   init: function () {
       this.eid = "test"; 
       this.atext = document.getElementById(this.eid); 
-      this.cypher = this.atext.getAttribute("value"); 
-      console.log(this.cypher); 
-      this.el.addEventListener('markerFound', function() {
-          update( this.cypher, this.eid); 
-      }); 
+      this.cypher = this.atext.getAttribute("cypher");
+      this.eventHandleFn = function () { update(this.cypher, this.eid) };
+      this.el.addEventListener('markerFound',this.eventHandleFn); 
   },
 
   update: function (oldData) {
-      console.log(oldData); 
+    let inputVar = document.getElementById("secret").value; // key
+    let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
+    if(oldData.atext.value && oldData.atext.value === cypher(this.data.atext.getAttribute("value"), cleanInput)){
+      this.el.removeEventListener("markerFound", this.eventHandleFn); 
+    }
   }
 
 })
@@ -187,6 +189,7 @@ AFRAME.registerComponent('markerhandlertest', {
 
       <a-text 
         id="test" 
+        cypher="AQRIROITGWRBNWSUFLE"
         value="AQRIROITGWRBNWSUFLE" 
         color="red" 
         rotation="-90 0 0" 
