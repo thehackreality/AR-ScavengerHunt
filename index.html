@@ -140,19 +140,19 @@ AFRAME.registerComponent('markerhandlerfive', {
 
 AFRAME.registerComponent('markerhandlertest', {
   init: function () {
-      var Marker = this.el; 
-
-      this.decryptVal = document.getElementById("test").getAttribute("value");
-
-      console.log(this.decryptVal); 
-
-      Marker.addEventListener('markerFound', function() {
-          let at = document.getElementById("test"); 
-          let cypher = at.getAttribute("value");  
-          console.log(cypher); 
-          update(cypher, "test"); 
+      this.eid = "test"; 
+      this.atext = document.getElementById(this.eid); 
+      this.cypher = this.atext.getAttribute("value"); 
+      console.log(this.cypher); 
+      this.el.addEventListener('markerFound', function() {
+          update( this.cypher, this.eid); 
       }); 
+  },
+
+  update: function (oldData) {
+      console.log(oldData); 
   }
+
 })
 </script>
 
