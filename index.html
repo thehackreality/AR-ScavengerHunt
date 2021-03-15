@@ -150,7 +150,7 @@ AFRAME.registerComponent('markerhandlertest', {
 
           if(inputVar!="" || inputVar != null){
             let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
-            let decode = cypher(this.val, cleanInput, true); //decode
+            let decode = cypher(document.getElementById("test").getAttribute("value"), cleanInput, true); //decode
             let encodeTest = cypher(decode, cleanInput); 
 
             if(encodeTest == this.cypher){
