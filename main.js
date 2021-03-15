@@ -39,6 +39,7 @@ function decrypt() {
         return; 
     }else{
         console.log("I got here"); 
+        console.log(encodeTest, current_cypher); 
         document.getElementById(current_id).setAttribute("value", decode);
         document.getElementById(current_id).setAttribute("color", "green");
         return; 
