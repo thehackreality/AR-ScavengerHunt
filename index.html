@@ -144,6 +144,7 @@ AFRAME.registerComponent('markerhandlertest', {
       this.atext = document.getElementById(this.eid); 
       this.cypher = this.atext.getAttribute("cypher");
       this.val = this.atext.getAttribute("value");
+      console.log(cypher, val); 
     
       this.el.addEventListener('markerFound', function() {
           
@@ -162,6 +163,14 @@ AFRAME.registerComponent('markerhandlertest', {
               this.atext.setAttribute("color", "red"); 
             }
           }
+      }); 
+
+      this.el.addEventListener('markerLost', function() {
+         
+        document.getElementById("test").setAttribute("value", this.cypher); 
+        document.getElementById("test").setAttribute("color", "red"); 
+        
+         
       }); 
   }
 })
