@@ -2,6 +2,7 @@
 let current_cypher = ""; 
 let current_id = ""; 
 
+
 //Crappy js.png
 function update(cypher, id){
     current_cypher = cypher;

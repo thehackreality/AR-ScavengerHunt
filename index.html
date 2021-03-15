@@ -82,6 +82,8 @@ beginning. It will get tougher soon if it isnt touch already! :)  -->
           update(cypher, "im1"); 
       }); 
   }
+
+  
 })
 
 AFRAME.registerComponent('markerhandlertwo', {
@@ -139,6 +141,10 @@ AFRAME.registerComponent('markerhandlerfive', {
 AFRAME.registerComponent('markerhandlertest', {
   init: function () {
       var Marker = this.el; 
+
+      this.decryptVal = document.getElementById("test").getAttribute("value");
+
+      console.log(this.decryptVal); 
 
       Marker.addEventListener('markerFound', function() {
           let at = document.getElementById("test"); 
