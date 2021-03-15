@@ -35,5 +35,5 @@ function decrypt() {
 
     //let encodeTest = cypher(decode,cleanInput); 
 
-    document.getElementById("test").setAttribute("value", decode); 
+    document.getElementById("test").setAttribute("value", "hello"); 
 }
