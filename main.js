@@ -34,11 +34,16 @@ function decrypt() {
 
     let encodeTest = cypher(decode,cleanInput); 
 
-    if(encodeTest != current_cypher) return; 
-
+    if(encodeTest != current_cypher){
+        console.log(encodeTest, current_cypher); 
+        return; 
+    }else{
+        console.log("I got here"); 
+        document.getElementById(current_id).setAttribute("value", decode);
+        document.getElementById(current_id).setAttribute("color", "green");
+        return; 
+    }
     
-    document.getElementById(current_id).setAttribute("value", decode);
-    document.getElementById(current_id).setAttribute("color", "green");
     
     
 
