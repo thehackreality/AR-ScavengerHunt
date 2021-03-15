@@ -159,7 +159,7 @@ AFRAME.registerComponent('markerhandlertest', {
       this.el.removeEventListener('markerFound', function() {
           let at = document.getElementById("test"); 
           let cypher = at.getAttribute("value");  
-          console.log(cypher); 
+          console.log("hahahaha", cypher); 
           update(cypher, "test"); 
       }); 
     }
