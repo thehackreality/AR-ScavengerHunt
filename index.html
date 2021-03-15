@@ -142,8 +142,7 @@ AFRAME.registerComponent('markerhandlertest', {
   init: function () {
       this.eid = "test"; 
       this.cypher = document.getElementById("test").getAttribute("cypher");
-      this.val = document.getElementById("test").getAttribute("value");
-      console.log(cypher, val); 
+      console.log(cypher); 
     
       this.el.addEventListener('markerFound', function() {
           
