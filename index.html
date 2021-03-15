@@ -143,29 +143,27 @@ AFRAME.registerComponent('markerhandlertest', {
       this.eid = "test"; 
       this.atext = document.getElementById(this.eid); 
       this.cypher = this.atext.getAttribute("cypher");
-      this.eventHandleFn = function () { update(this.cypher, this.eid) };
+      this.val = this.atext.getAttribute("value");
+    
       this.el.addEventListener('markerFound', function() {
-          let at = document.getElementById("test"); 
-          let cypher = at.getAttribute("value");  
-          console.log(cypher); 
-          update(cypher, "test"); 
-      }); 
-  },
+          
+          let inputVar = document.getElementById("secret").value; // key
 
-  update: function (oldData) {
-    let inputVar = document.getElementById("secret").value; // key
-    let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
-    console.log("Updates bruh"); 
-    if(oldData.atext && oldData.atext.getAttribute("value") === cypher(this.data.atext.getAttribute("value"), cleanInput)){
-      this.el.removeEventListener('markerFound', function() {
-          let at = document.getElementById("test"); 
-          let cypher = at.getAttribute("value");  
-          console.log("hahahaha", cypher); 
-          update(cypher, "test"); 
+          if(inputVar!="" || inputVar != null){
+            let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
+            let decode = cypher(this.val, cleanInput, true); //decode
+            let encodeTest = cypher(decode, cleanInput); 
+
+            if(encodeTest == this.cypher){
+              this.atext.setAttribute("value", decode); 
+              this.atext.setAttribute("color", "green")
+            }else{
+              this.atext.setAttribute("value", this.cypher); 
+              this.atext.setAttribute("color", "red"); 
+            }
+          }
       }); 
-    }
   }
-
 })
 </script>
 
@@ -181,7 +179,7 @@ AFRAME.registerComponent('markerhandlertest', {
     <div class="form-div">
       <form class="form">
         <input type="text" id="secret" name="secret" placeholder="input secret here"><br>
-        <input class='button' type='button' onclick="decrypt()" value="Decrypt"></input>
+        <!--<input class='button' type='button' onclick="decrypt()" value="Decrypt"></input>-->
       </form> 
     </div>
 
