@@ -150,7 +150,7 @@ AFRAME.registerComponent('markerhandlertest', {
   update: function (oldData) {
     let inputVar = document.getElementById("secret").value; // key
     let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
-    if(oldData.atext.value && oldData.atext.value === cypher(this.data.atext.getAttribute("value"), cleanInput)){
+    if(oldData.atext && oldData.atext.getAttribute("value") === cypher(this.data.atext.getAttribute("value"), cleanInput)){
       this.el.removeEventListener("markerFound", this.eventHandleFn); 
     }
   }
