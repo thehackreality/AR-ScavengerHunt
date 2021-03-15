@@ -144,14 +144,24 @@ AFRAME.registerComponent('markerhandlertest', {
       this.atext = document.getElementById(this.eid); 
       this.cypher = this.atext.getAttribute("cypher");
       this.eventHandleFn = function () { update(this.cypher, this.eid) };
-      this.el.addEventListener('markerFound',this.eventHandleFn); 
+      this.el.addEventListener('markerFound', function() {
+          let at = document.getElementById("im5"); 
+          let cypher = at.getAttribute("value");  
+          console.log(cypher); 
+          update(cypher, "im5"); 
+      }); 
   },
 
   update: function (oldData) {
     let inputVar = document.getElementById("secret").value; // key
     let cleanInput = inputVar.replace(/\s+/g, ''); //cleanKey
     if(oldData.atext && oldData.atext.getAttribute("value") === cypher(this.data.atext.getAttribute("value"), cleanInput)){
-      this.el.removeEventListener("markerFound", this.eventHandleFn); 
+      this.el.removeEventListener('markerFound', function() {
+          let at = document.getElementById("im5"); 
+          let cypher = at.getAttribute("value");  
+          console.log(cypher); 
+          update(cypher, "im5"); 
+      }); 
     }
   }
 
