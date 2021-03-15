@@ -34,6 +34,6 @@ function decrypt() {
     //let decode = cypher(current_cypher, cleanInput, true); //decode
 
     //let encodeTest = cypher(decode,cleanInput); 
-
+    console.log("I am here"); 
     document.getElementById("test").setAttribute("value", "hello"); 
 }
