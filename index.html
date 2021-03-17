@@ -136,6 +136,58 @@ AFRAME.registerComponent('markerhandlerfive', {
   }
 })
 
+AFRAME.registerComponent('markerhandlersix', {
+  init: function () {
+      var Marker = this.el; 
+
+      Marker.addEventListener('markerFound', function() {
+          let at = document.getElementById("im6"); 
+          let cypher = at.getAttribute("value");  
+          console.log(cypher); 
+          update(cypher, "im6"); 
+      }); 
+  }
+})
+
+AFRAME.registerComponent('markerhandlerseven', {
+  init: function () {
+      var Marker = this.el; 
+
+      Marker.addEventListener('markerFound', function() {
+          let at = document.getElementById("im7"); 
+          let cypher = at.getAttribute("value");  
+          console.log(cypher); 
+          update(cypher, "im7"); 
+      }); 
+  }
+})
+
+AFRAME.registerComponent('markerhandlereight', {
+  init: function () {
+      var Marker = this.el; 
+
+      Marker.addEventListener('markerFound', function() {
+          let at = document.getElementById("im8"); 
+          let cypher = at.getAttribute("value");  
+          console.log(cypher); 
+          update(cypher, "im8"); 
+      }); 
+  }
+})
+
+AFRAME.registerComponent('markerhandlernine', {
+  init: function () {
+      var Marker = this.el; 
+
+      Marker.addEventListener('markerFound', function() {
+          let at = document.getElementById("im9"); 
+          let cypher = at.getAttribute("value");  
+          console.log(cypher); 
+          update(cypher, "im9"); 
+      }); 
+  }
+})
+
 AFRAME.registerComponent('markerhandlertest', {
   init: function () {
       var Marker = this.el; 
@@ -280,7 +332,7 @@ AFRAME.registerComponent('markerhandlertest', {
           </a-nft>
 
           <a-nft
-          markerhandlerfive type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/six/six'
+          markerhandlersix type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/six/six'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
            
           
@@ -296,7 +348,7 @@ AFRAME.registerComponent('markerhandlertest', {
           </a-nft>
 
           <a-nft
-          markerhandlerfive type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/seven/seven'
+          markerhandlerseven type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/seven/seven'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
            
           
@@ -312,7 +364,7 @@ AFRAME.registerComponent('markerhandlertest', {
           </a-nft>
 
           <a-nft
-          markerhandlerfive type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/eight/eight'
+          markerhandlereight type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/eight/eight'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
            
           
@@ -328,7 +380,7 @@ AFRAME.registerComponent('markerhandlertest', {
           </a-nft>
 
           <a-nft
-          markerhandlerfive type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/nine/nine'
+          markerhandlernine type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/thehackreality/AR-ScavengerHunt/master/assets/nine/nine'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
            
           
